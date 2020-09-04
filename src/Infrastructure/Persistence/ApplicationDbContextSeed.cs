@@ -1,5 +1,4 @@
-﻿using movie_db_app.Domain.Entities;
-using movie_db_app.Infrastructure.Identity;
+﻿using movie_db_app.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;

@@ -1,6 +1,5 @@
 ﻿using movie_db_app.Application.Common.Interfaces;
 using movie_db_app.Domain.Common;
-using movie_db_app.Domain.Entities;
 using movie_db_app.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
