@@ -1,5 +1,4 @@
 ﻿using movie_db_app.Application.Common.Interfaces;
-using movie_db_app.Infrastructure.Files;
 using movie_db_app.Infrastructure.Identity;
 using movie_db_app.Infrastructure.Persistence;
 using movie_db_app.Infrastructure.Services;
@@ -37,7 +36,7 @@ namespace movie_db_app.Infrastructure
 
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
-            services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
+            //services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
             // TODO : Inject with parameters, implement IDisposable
             services.AddTransient<IMovieService, MovieService>();
 

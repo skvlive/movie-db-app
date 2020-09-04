@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using movie_db_app.Application.Common.Mappings;
-using movie_db_app.Application.TodoLists.Queries.GetTodos;
+using movie_db_app.Application.Movies.Queries.DiscoverMovies;
+using movie_db_app.Application.Movies.Queries.GetMovieDetails;
 using movie_db_app.Domain.Entities;
 using NUnit.Framework;
 using System;
@@ -29,8 +30,8 @@ namespace movie_db_app.Application.UnitTests.Common.Mappings
         }
         
         [Test]
-        [TestCase(typeof(TodoList), typeof(TodoListDto))]
-        [TestCase(typeof(TodoItem), typeof(TodoItemDto))]
+        [TestCase(typeof(MovieList), typeof(MovieListDto))]
+        [TestCase(typeof(Movie), typeof(MovieDto))]
         public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
         {
             var instance = Activator.CreateInstance(source);

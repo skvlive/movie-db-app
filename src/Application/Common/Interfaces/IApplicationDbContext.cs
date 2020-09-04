@@ -7,10 +7,6 @@ namespace movie_db_app.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-        DbSet<TodoList> TodoLists { get; set; }
-
-        DbSet<TodoItem> TodoItems { get; set; }
-
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
