@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts
+namespace movie_db_app.Application.WeatherForecasts.Queries.GetWeatherForecasts
 {
     public class WeatherForecast
     {

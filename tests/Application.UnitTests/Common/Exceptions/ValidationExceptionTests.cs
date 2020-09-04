@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
+﻿using movie_db_app.Application.Common.Exceptions;
 using FluentAssertions;
 using FluentValidation.Results;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.Application.UnitTests.Common.Exceptions
+namespace movie_db_app.Application.UnitTests.Common.Exceptions
 {
     public class ValidationExceptionTests
     {

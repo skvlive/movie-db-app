@@ -1,43 +1,42 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Infrastructure.Identity;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Common;
+using movie_db_app.Domain.Entities;
+using movie_db_app.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Options;
-using System.Linq;
+using System.Data;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Infrastructure.Persistence
+namespace movie_db_app.Infrastructure.Persistence
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
         private readonly ICurrentUserService _currentUserService;
         private readonly IDateTime _dateTime;
-        private readonly IDomainEventService _domainEventService;
+        private IDbContextTransaction _currentTransaction;
 
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions,
             ICurrentUserService currentUserService,
-            IDomainEventService domainEventService,
             IDateTime dateTime) : base(options, operationalStoreOptions)
         {
             _currentUserService = currentUserService;
-            _domainEventService = domainEventService;
             _dateTime = dateTime;
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
-
         public DbSet<TodoList> TodoLists { get; set; }
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        public DbSet<TodoItem> TodoItems { get; set; }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
-            foreach (Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<AuditableEntity> entry in ChangeTracker.Entries<AuditableEntity>())
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
             {
                 switch (entry.State)
                 {
@@ -45,7 +44,6 @@ namespace CleanArchitecture.Infrastructure.Persistence
                         entry.Entity.CreatedBy = _currentUserService.UserId;
                         entry.Entity.Created = _dateTime.Now;
                         break;
-
                     case EntityState.Modified:
                         entry.Entity.LastModifiedBy = _currentUserService.UserId;
                         entry.Entity.LastModified = _dateTime.Now;
@@ -53,11 +51,56 @@ namespace CleanArchitecture.Infrastructure.Persistence
                 }
             }
 
-            int result = await base.SaveChangesAsync(cancellationToken);
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
-            await DispatchEvents(cancellationToken);
+        public async Task BeginTransactionAsync()
+        {
+            if (_currentTransaction != null)
+            {
+                return;
+            }
 
-            return result;
+            _currentTransaction = await base.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted).ConfigureAwait(false);
+        }
+
+        public async Task CommitTransactionAsync()
+        {
+            try
+            {
+                await SaveChangesAsync().ConfigureAwait(false);
+
+                _currentTransaction?.Commit();
+            }
+            catch
+            {
+                RollbackTransaction();
+                throw;
+            }
+            finally
+            {
+                if (_currentTransaction != null)
+                {
+                    _currentTransaction.Dispose();
+                    _currentTransaction = null;
+                }
+            }
+        }
+
+        public void RollbackTransaction()
+        {
+            try
+            {
+                _currentTransaction?.Rollback();
+            }
+            finally
+            {
+                if (_currentTransaction != null)
+                {
+                    _currentTransaction.Dispose();
+                    _currentTransaction = null;
+                }
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -65,19 +108,6 @@ namespace CleanArchitecture.Infrastructure.Persistence
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(builder);
-        }
-
-        private async Task DispatchEvents(CancellationToken cancellationToken)
-        {
-            var domainEventEntities = ChangeTracker.Entries<IHasDomainEvent>()
-                .Select(x => x.Entity.DomainEvents)
-                .SelectMany(x => x)
-                .ToArray();
-
-            foreach (var domainEvent in domainEventEntities)
-            {
-                await _domainEventService.Publish(domainEvent);
-            }
         }
     }
 }

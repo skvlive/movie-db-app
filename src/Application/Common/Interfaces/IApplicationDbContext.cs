@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using movie_db_app.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Common.Interfaces
+namespace movie_db_app.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {

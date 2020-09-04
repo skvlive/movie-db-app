@@ -1,16 +1,12 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Enums;
-using CleanArchitecture.Domain.Events;
+﻿using movie_db_app.Domain.Common;
+using movie_db_app.Domain.Enums;
 using System;
-using System.Collections.Generic;
 
-namespace CleanArchitecture.Domain.Entities
+namespace movie_db_app.Domain.Entities
 {
-    public class TodoItem : AuditableEntity, IHasDomainEvent
+    public class TodoItem : AuditableEntity
     {
         public int Id { get; set; }
-
-        public TodoList List { get; set; }
 
         public int ListId { get; set; }
 
@@ -18,25 +14,13 @@ namespace CleanArchitecture.Domain.Entities
 
         public string Note { get; set; }
 
-        public PriorityLevel Priority { get; set; }
+        public bool Done { get; set; }
 
         public DateTime? Reminder { get; set; }
 
-        private bool _done;
-        public bool Done
-        {
-            get => _done;
-            set
-            {
-                if (value == true && _done == false)
-                {
-                    DomainEvents.Add(new TodoItemCompletedEvent(this));
-                }
+        public PriorityLevel Priority { get; set; }
 
-                _done = value;
-            }
-        }
 
-        public List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();
+        public TodoList List { get; set; }
     }
 }

@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Enums;
+﻿using movie_db_app.Application.Common.Exceptions;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Entities;
+using movie_db_app.Domain.Enums;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail
+namespace movie_db_app.Application.TodoItems.Commands.UpdateTodoItemDetail
 {
     public class UpdateTodoItemDetailCommand : IRequest
     {

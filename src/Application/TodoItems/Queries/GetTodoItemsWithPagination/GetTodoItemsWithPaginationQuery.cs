@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Mappings;
-using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Application.Common.Mappings;
+using movie_db_app.Application.Common.Models;
+using movie_db_app.Application.TodoLists.Queries.GetTodos;
 using MediatR;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Queries.GetTodoItemsWithPagination
+namespace movie_db_app.Application.TodoItems.Queries.GetTodoItemsWithPagination
 {
     public class GetTodoItemsWithPaginationQuery : IRequest<PaginatedList<TodoItemDto>>
     {

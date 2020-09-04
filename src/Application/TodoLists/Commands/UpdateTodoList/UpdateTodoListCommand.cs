@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Exceptions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
+﻿using movie_db_app.Application.Common.Exceptions;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList
+namespace movie_db_app.Application.TodoLists.Commands.UpdateTodoList
 {
     public class UpdateTodoListCommand : IRequest
     {

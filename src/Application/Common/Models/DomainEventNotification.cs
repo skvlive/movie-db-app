@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
+﻿using movie_db_app.Domain.Common;
 using MediatR;
 
-namespace CleanArchitecture.Application.Common.Models
+namespace movie_db_app.Application.Common.Models
 {
     public class DomainEventNotification<TDomainEvent> : INotification where TDomainEvent : DomainEvent
     {

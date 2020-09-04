@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
+﻿using movie_db_app.Application.Common.Interfaces;
 using System;
 
-namespace CleanArchitecture.Infrastructure.Services
+namespace movie_db_app.Infrastructure.Services
 {
     public class DateTimeService : IDateTime
     {

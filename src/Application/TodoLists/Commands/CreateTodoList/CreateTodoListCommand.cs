@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoLists.Commands.CreateTodoList
+namespace movie_db_app.Application.TodoLists.Commands.CreateTodoList
 {
-    public class CreateTodoListCommand : IRequest<int>
+    public partial class CreateTodoListCommand : IRequest<int>
     {
         public string Title { get; set; }
     }

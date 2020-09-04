@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts;
+﻿using movie_db_app.Application.WeatherForecasts.Queries.GetWeatherForecasts;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.WebUI.Controllers
+namespace movie_db_app.WebUI.Controllers
 {
     public class WeatherForecastController : ApiController
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Application.Common.Exceptions
+namespace movie_db_app.Application.Common.Exceptions
 {
     public class NotFoundException : Exception
     {

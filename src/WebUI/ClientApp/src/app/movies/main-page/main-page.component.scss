@@ -1,0 +1,29 @@
+.content {
+  overflow: hidden;
+  background-color: #343434;
+}
+
+.container {
+  background-color: #343434;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.mat-toolbar.mat-primary {
+  background: #0f0e0ee1;
+  color: #fff;
+}
+
+.drawer-container {
+  background:#343434;
+  color: #fff;
+}
+
+.mat-drawer-content {
+  overflow: hidden;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+}

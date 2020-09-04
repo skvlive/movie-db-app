@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace CleanArchitecture.Application.Common.Mappings
+namespace movie_db_app.Application.Common.Mappings
 {
     public interface IMapFrom<T>
     {   

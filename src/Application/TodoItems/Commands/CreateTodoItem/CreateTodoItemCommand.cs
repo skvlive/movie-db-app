@@ -1,11 +1,10 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Events;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Entities;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem
+namespace movie_db_app.Application.TodoItems.Commands.CreateTodoItem
 {
     public class CreateTodoItemCommand : IRequest<int>
     {
@@ -31,8 +30,6 @@ namespace CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem
                 Title = request.Title,
                 Done = false
             };
-
-            entity.DomainEvents.Add(new TodoItemCreatedEvent(entity));
 
             _context.TodoItems.Add(entity);
 

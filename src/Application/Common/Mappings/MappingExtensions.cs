@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using CleanArchitecture.Application.Common.Models;
+using movie_db_app.Application.Common.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Common.Mappings
+namespace movie_db_app.Application.Common.Mappings
 {
     public static class MappingExtensions
     {

@@ -1,0 +1,14 @@
+<mat-card fxFill>
+  <a routerLink="/movie/{{ movieBanner.id }}">
+    <img class="card-image" [src]="movieBanner.imagePath" />
+  </a>
+  <mat-card-title>
+    <p class="line-clamp-title">{{ movieBanner.title }}</p>
+  </mat-card-title>
+  <mat-card-content>
+    <p class="line-clamp">{{ movieBanner.formattedDate }} </p>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-icon class="red-icon">favorite_icon</mat-icon><span class="text-with-icon">{{ movieBanner.voteAverage }}</span>
+  </mat-card-footer>
+</mat-card>

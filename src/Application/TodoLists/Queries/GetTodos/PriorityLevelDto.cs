@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+﻿namespace movie_db_app.Application.TodoLists.Queries.GetTodos
 {
     public class PriorityLevelDto
     {

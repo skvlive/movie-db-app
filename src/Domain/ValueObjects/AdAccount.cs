@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Exceptions;
+﻿using movie_db_app.Domain.Common;
+using movie_db_app.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.Domain.ValueObjects
+namespace movie_db_app.Domain.ValueObjects
 {
     public class AdAccount : ValueObject
     {

@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.TodoLists.Queries.ExportTodos;
-using CleanArchitecture.Infrastructure.Files.Maps;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Application.TodoLists.Queries.ExportTodos;
+using movie_db_app.Infrastructure.Files.Maps;
 using CsvHelper;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace CleanArchitecture.Infrastructure.Files
+namespace movie_db_app.Infrastructure.Files
 {
     public class CsvFileBuilder : ICsvFileBuilder
     {

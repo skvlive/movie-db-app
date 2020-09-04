@@ -1,0 +1,83 @@
+.mat-card {
+  height: 375px;
+  width: initial;
+  overflow: hidden;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.card-image {
+  object-fit: fill;
+  object-position: center;
+  height: 300px;
+  width: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.mat-card-title {
+  font-size: 16px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: grey;
+  height: 50px;
+  margin: 0px;
+}
+
+.mat-card-content {
+  font-size: 12px;
+  height: 15px;
+  margin: 0px;
+  flex-grow: 1;
+  color: grey;
+}
+
+.line-clamp-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.mat-card-subtitle {
+  font-size: 12px;
+  max-height: 16px;
+}
+
+.mat-card-actions {
+  height: 16px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 4px;
+}
+
+.mat-card-footer {
+  font-size: 14px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  height: 20px;
+  right: -10px;
+  flex-direction: row;
+}
+
+.red-icon {
+  color: #920303;
+}
+
+.text-with-icon{
+  margin-left: 5px; 
+  margin-bottom: 5px;
+  font-family: 'Seg oe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color:grey;
+}

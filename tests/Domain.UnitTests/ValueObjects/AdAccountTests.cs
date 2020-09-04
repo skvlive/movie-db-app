@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain.Exceptions;
-using CleanArchitecture.Domain.ValueObjects;
+﻿using movie_db_app.Domain.Exceptions;
+using movie_db_app.Domain.ValueObjects;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace CleanArchitecture.Domain.UnitTests.ValueObjects
+namespace movie_db_app.Domain.UnitTests.ValueObjects
 {
     public class AdAccountTests
     {

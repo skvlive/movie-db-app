@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.Common.Models;
+﻿using movie_db_app.Application.Common.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 
-namespace CleanArchitecture.Infrastructure.Identity
+namespace movie_db_app.Infrastructure.Identity
 {
     public static class IdentityResultExtensions
     {

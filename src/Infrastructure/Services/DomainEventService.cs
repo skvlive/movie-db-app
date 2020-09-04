@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Domain.Common;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Application.Common.Models;
+using movie_db_app.Domain.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Infrastructure.Services
+namespace movie_db_app.Infrastructure.Services
 {
     public class DomainEventService : IDomainEventService
     {

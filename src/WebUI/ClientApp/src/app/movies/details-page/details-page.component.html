@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <div style="overflow: hidden" fxFill Layout="row" fxLayoutAlign="space-between center" >
+      <h1>Movies DB </h1>
+    </div>
+</mat-toolbar>
+<!-- TODO: Remove the margin for the movie details component -->
+<mat-drawer-container class="container" fxFill>
+  <mat-drawer-content fxFill>
+    <div class="content" fxFill>
+      <app-movie-details [movie]="movie"></app-movie-details>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+

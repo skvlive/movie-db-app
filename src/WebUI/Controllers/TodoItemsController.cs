@@ -1,25 +1,16 @@
-﻿using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
-using CleanArchitecture.Application.TodoItems.Commands.UpdateTodoItemDetail;
-using CleanArchitecture.Application.TodoItems.Queries.GetTodoItemsWithPagination;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+﻿using movie_db_app.Application.TodoItems.Commands.CreateTodoItem;
+using movie_db_app.Application.TodoItems.Commands.DeleteTodoItem;
+using movie_db_app.Application.TodoItems.Commands.UpdateTodoItem;
+using movie_db_app.Application.TodoItems.Commands.UpdateTodoItemDetail;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.WebUI.Controllers
+namespace movie_db_app.WebUI.Controllers
 {
     [Authorize]
     public class TodoItemsController : ApiController
     {
-        [HttpGet]
-        public async Task<ActionResult<PaginatedList<TodoItemDto>>> GetTodoItemsWithPagination([FromQuery] GetTodoItemsWithPaginationQuery query)
-        {
-            return await Mediator.Send(query);
-        }
-
         [HttpPost]
         public async Task<ActionResult<int>> Create(CreateTodoItemCommand command)
         {

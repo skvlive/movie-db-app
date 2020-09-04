@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application.TodoLists.Queries.ExportTodos
+﻿namespace movie_db_app.Application.TodoLists.Queries.ExportTodos
 {
     public class ExportTodosVm
     {

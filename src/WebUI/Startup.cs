@@ -1,10 +1,9 @@
-using CleanArchitecture.Application;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Infrastructure;
-using CleanArchitecture.Infrastructure.Persistence;
-using CleanArchitecture.WebUI.Filters;
-using CleanArchitecture.WebUI.Services;
-using FluentValidation.AspNetCore;
+using movie_db_app.Application;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Infrastructure;
+using movie_db_app.Infrastructure.Persistence;
+using movie_db_app.WebUI.Filters;
+using movie_db_app.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +15,7 @@ using NSwag;
 using NSwag.Generation.Processors.Security;
 using System.Linq;
 
-namespace CleanArchitecture.WebUI
+namespace movie_db_app.WebUI
 {
     public class Startup
     {
@@ -33,16 +32,15 @@ namespace CleanArchitecture.WebUI
             services.AddApplication();
             services.AddInfrastructure(Configuration);
 
-            services.AddSingleton<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddHttpContextAccessor();
 
             services.AddHealthChecks()
                 .AddDbContextCheck<ApplicationDbContext>();
 
-            services.AddControllersWithViews(options =>
-                options.Filters.Add(new ApiExceptionFilterAttribute()))
-                    .AddFluentValidation();
+            services.AddControllersWithViews(options => 
+                options.Filters.Add(new ApiExceptionFilter()));
 
             services.AddRazorPages();
 
@@ -60,7 +58,7 @@ namespace CleanArchitecture.WebUI
 
             services.AddOpenApiDocument(configure =>
             {
-                configure.Title = "CleanArchitecture API";
+                configure.Title = "movie_db_app API";
                 configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
                 {
                     Type = OpenApiSecuritySchemeType.ApiKey,
@@ -124,8 +122,7 @@ namespace CleanArchitecture.WebUI
 
                 if (env.IsDevelopment())
                 {
-                    //spa.UseAngularCliServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }

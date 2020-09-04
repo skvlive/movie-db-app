@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.WebUI.Controllers
+namespace movie_db_app.WebUI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

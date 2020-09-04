@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Domain.Enums
+﻿namespace movie_db_app.Domain.Enums
 {
     public enum PriorityLevel
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Application.Common.Interfaces
+namespace movie_db_app.Application.Common.Interfaces
 {
     public interface IDateTime
     {

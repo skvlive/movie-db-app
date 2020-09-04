@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Common.Mappings;
-using CleanArchitecture.Domain.Entities;
+using movie_db_app.Application.Common.Mappings;
+using movie_db_app.Domain.Entities;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+namespace movie_db_app.Application.TodoLists.Queries.GetTodos
 {
     public class TodoItemDto : IMapFrom<TodoItem>
     {

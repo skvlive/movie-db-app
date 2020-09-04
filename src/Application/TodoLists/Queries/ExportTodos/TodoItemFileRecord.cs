@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Mappings;
-using CleanArchitecture.Domain.Entities;
+﻿using movie_db_app.Application.Common.Mappings;
+using movie_db_app.Domain.Entities;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.ExportTodos
+namespace movie_db_app.Application.TodoLists.Queries.ExportTodos
 {
     public class TodoItemRecord : IMapFrom<TodoItem>
     {

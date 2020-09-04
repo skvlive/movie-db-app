@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Application.TodoLists.Queries.ExportTodos;
+﻿using movie_db_app.Application.TodoLists.Queries.ExportTodos;
 using CsvHelper.Configuration;
 using System.Globalization;
 
-namespace CleanArchitecture.Infrastructure.Files.Maps
+namespace movie_db_app.Infrastructure.Files.Maps
 {
     public class TodoItemRecordMap : ClassMap<TodoItemRecord>
     {

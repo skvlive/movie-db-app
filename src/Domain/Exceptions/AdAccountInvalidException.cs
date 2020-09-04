@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchitecture.Domain.Exceptions
+namespace movie_db_app.Domain.Exceptions
 {
     public class AdAccountInvalidException : Exception
     {

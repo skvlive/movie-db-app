@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Domain.Enums;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoLists.Queries.GetTodos
+namespace movie_db_app.Application.TodoLists.Queries.GetTodos
 {
     public class GetTodosQuery : IRequest<TodosVm>
     {

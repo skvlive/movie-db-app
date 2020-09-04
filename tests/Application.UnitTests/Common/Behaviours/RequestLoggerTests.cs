@@ -1,13 +1,13 @@
-﻿using CleanArchitecture.Application.Common.Behaviours;
-using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+﻿using movie_db_app.Application.Common.Behaviours;
+using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Application.TodoItems.Commands.CreateTodoItem;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.UnitTests.Common.Behaviours
+namespace movie_db_app.Application.UnitTests.Common.Behaviours
 {
     public class RequestLoggerTests
     {

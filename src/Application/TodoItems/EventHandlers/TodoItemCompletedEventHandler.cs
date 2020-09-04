@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Common.Models;
-using CleanArchitecture.Domain.Events;
+﻿using movie_db_app.Application.Common.Models;
+using movie_db_app.Domain.Events;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.TodoItems.EventHandlers
+namespace movie_db_app.Application.TodoItems.EventHandlers
 {
     public class TodoItemCompletedEventHandler : INotificationHandler<DomainEventNotification<TodoItemCompletedEvent>>
     {
@@ -20,7 +20,7 @@ namespace CleanArchitecture.Application.TodoItems.EventHandlers
         {
             var domainEvent = notification.DomainEvent;
 
-            _logger.LogInformation("CleanArchitecture Domain Event: {DomainEvent}", domainEvent.GetType().Name);
+            _logger.LogInformation("movie_db_app Domain Event: {DomainEvent}", domainEvent.GetType().Name);
 
             return Task.CompletedTask;
         }

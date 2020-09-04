@@ -1,18 +1,16 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
+﻿using movie_db_app.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace CleanArchitecture.WebUI.Services
+namespace movie_db_app.WebUI.Services
 {
     public class CurrentUserService : ICurrentUserService
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
         {
-            _httpContextAccessor = httpContextAccessor;
+            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
         }
 
-        public string UserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        public string UserId { get; }
     }
 }

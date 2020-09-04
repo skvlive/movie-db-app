@@ -1,13 +1,13 @@
-﻿using CleanArchitecture.Application.TodoLists.Commands.CreateTodoList;
-using CleanArchitecture.Application.TodoLists.Commands.DeleteTodoList;
-using CleanArchitecture.Application.TodoLists.Commands.UpdateTodoList;
-using CleanArchitecture.Application.TodoLists.Queries.ExportTodos;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
+﻿using movie_db_app.Application.TodoLists.Commands.CreateTodoList;
+using movie_db_app.Application.TodoLists.Commands.DeleteTodoList;
+using movie_db_app.Application.TodoLists.Commands.UpdateTodoList;
+using movie_db_app.Application.TodoLists.Queries.ExportTodos;
+using movie_db_app.Application.TodoLists.Queries.GetTodos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.WebUI.Controllers
+namespace movie_db_app.WebUI.Controllers
 {
     [Authorize]
     public class TodoListsController : ApiController

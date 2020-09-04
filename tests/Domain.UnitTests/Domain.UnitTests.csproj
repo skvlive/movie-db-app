@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CleanArchitecture.Domain.UnitTests</RootNamespace>
-    <AssemblyName>CleanArchitecture.Domain.UnitTests</AssemblyName>
+    <RootNamespace>movie_db_app.Domain.UnitTests</RootNamespace>
+    <AssemblyName>movie_db_app.Domain.UnitTests</AssemblyName>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

@@ -1,14 +1,14 @@
-﻿using CleanArchitecture.Application.Common.Interfaces;
-using CleanArchitecture.Infrastructure.Files;
-using CleanArchitecture.Infrastructure.Identity;
-using CleanArchitecture.Infrastructure.Persistence;
-using CleanArchitecture.Infrastructure.Services;
+﻿using movie_db_app.Application.Common.Interfaces;
+using movie_db_app.Infrastructure.Files;
+using movie_db_app.Infrastructure.Identity;
+using movie_db_app.Infrastructure.Persistence;
+using movie_db_app.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure
+namespace movie_db_app.Infrastructure
 {
     public static class DependencyInjection
     {
@@ -17,7 +17,7 @@ namespace CleanArchitecture.Infrastructure
             if (configuration.GetValue<bool>("UseInMemoryDatabase"))
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseInMemoryDatabase("CleanArchitectureDb"));
+                    options.UseInMemoryDatabase("movie_db_appDb"));
             }
             else
             {
@@ -29,17 +29,17 @@ namespace CleanArchitecture.Infrastructure
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
-            services.AddScoped<IDomainEventService, DomainEventService>();
-
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
+                services.AddDefaultIdentity<ApplicationUser>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+            
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
             services.AddTransient<IDateTime, DateTimeService>();
             services.AddTransient<IIdentityService, IdentityService>();
             services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
+            // TODO : Inject with parameters, implement IDisposable
+            services.AddTransient<IMovieService, MovieService>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

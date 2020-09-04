@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <div style="overflow: hidden" fxFill Layout="row" fxLayoutAlign="space-between center">
+    <button mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Movies DB</h1>
+    <button mat-button [matMenuTriggerFor]="filterMenu.menu">
+      <mat-icon>settings_icon</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<app-filter-menu #filterMenu="filterMenu"></app-filter-menu>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="drawer-container" hasBackdrop="false" mode="over" closed (mouseleave)="drawer.close()">
+    <app-nav-menu></app-nav-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content" fxLayout="row wrap" fxLayoutGap="5px grid" fxLayoutAlign="space-around stretch" stretch>
+      <div class="card" fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.lg="20%" fxFlex.gt-lg="20%"
+           *ngFor="let movieBanner of movieBanners$ | async; let i = index">
+        <app-movie [movieBanner]="movieBanner" [index]="i"></app-movie>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

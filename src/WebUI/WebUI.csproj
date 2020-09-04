@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CleanArchitecture.WebUI</RootNamespace>
-    <AssemblyName>CleanArchitecture.WebUI</AssemblyName>
+    <RootNamespace>movie_db_app.WebUI</RootNamespace>
+    <AssemblyName>movie_db_app.WebUI</AssemblyName>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>true</IsPackable>
@@ -16,17 +16,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.6" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="3.1.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="NSwag.AspNetCore" Version="13.7.0" />
-    <PackageReference Include="NSwag.MSBuild" Version="13.7.0">
+    <PackageReference Include="NSwag.AspNetCore" Version="13.3.0" />
+    <PackageReference Include="NSwag.MSBuild" Version="13.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -37,6 +37,14 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="App.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
 
   <ItemGroup>

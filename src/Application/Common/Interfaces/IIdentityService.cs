@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Application.Common.Models;
+﻿using movie_db_app.Application.Common.Models;
 using System.Threading.Tasks;
 
-namespace CleanArchitecture.Application.Common.Interfaces
+namespace movie_db_app.Application.Common.Interfaces
 {
     public interface IIdentityService
     {

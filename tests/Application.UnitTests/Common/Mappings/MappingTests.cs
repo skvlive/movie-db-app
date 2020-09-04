@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Common.Mappings;
-using CleanArchitecture.Application.TodoLists.Queries.GetTodos;
-using CleanArchitecture.Domain.Entities;
+using movie_db_app.Application.Common.Mappings;
+using movie_db_app.Application.TodoLists.Queries.GetTodos;
+using movie_db_app.Domain.Entities;
 using NUnit.Framework;
 using System;
 
-namespace CleanArchitecture.Application.UnitTests.Common.Mappings
+namespace movie_db_app.Application.UnitTests.Common.Mappings
 {
     public class MappingTests
     {

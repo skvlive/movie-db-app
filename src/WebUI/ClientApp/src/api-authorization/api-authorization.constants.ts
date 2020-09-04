@@ -1,4 +1,4 @@
-export const ApplicationName = 'CleanArchitecture.WebUI';
+export const ApplicationName = 'movie_db_app.WebUI';
 
 export const ReturnUrlType = 'returnUrl';
 

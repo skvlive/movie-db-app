@@ -1,8 +1,9 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿
+using movie_db_app.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitecture.Infrastructure.Persistence.Configurations
+namespace movie_db_app.Infrastructure.Persistence.Configurations
 {
     public class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
     {

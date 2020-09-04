@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CleanArchitecture.Domain.Common
+namespace movie_db_app.Domain.Common
 {
     public interface IHasDomainEvent
     {

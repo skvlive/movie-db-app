@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.Entities;
+﻿using movie_db_app.Domain.Common;
+using movie_db_app.Domain.Entities;
 
-namespace CleanArchitecture.Domain.Events
+namespace movie_db_app.Domain.Events
 {
     public class TodoItemCompletedEvent : DomainEvent
     {
